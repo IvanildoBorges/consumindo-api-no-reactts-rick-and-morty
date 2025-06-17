@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import type { Episodio } from "../../models/Episodio";
 import type { Personagem } from "../../models/Personagem";
+import ButtonCTA from "../ButtonCTA";
 import styles from "./style.module.css";
 
 type Props = {
@@ -51,7 +52,10 @@ const Card = ({
                         </div>
                     </div>
                 )}
-                <button className={styles["btn-cta"]} onClick={funcao}>{textBtn}</button>
+                <ButtonCTA
+                    textBtn={textBtn}
+                    funcao={funcao}
+                />
             </div>
         </div>
     );

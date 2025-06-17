@@ -1,0 +1,24 @@
+.not-found {
+    display: flex;
+    flex-direction: column;
+    height: 82vh;
+    margin: 0 auto;
+    background-color: var(--card-color);
+    gap: .75rem;
+    text-align: center;
+}
+
+.textNot {
+    font-size: 1.5rem;
+    font-weight: 700;
+}
+
+.subTextNot {
+    font-size: 1.125rem;
+}
+
+@media screen and (max-width: 768px) {
+    .not-found {
+        height: 80vh;
+    }
+}

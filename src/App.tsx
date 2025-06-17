@@ -7,6 +7,7 @@ import {
 import Layout from './components/Layout';
 import Loading from './components/Loading';
 import PageLoader from './components/PageLoader';
+import NotFound from './pages/NotFound';
 
 const HomePage = lazy(() => import('./pages/Home'));
 const PageListaEpsodios = lazy(() => import('./pages/Episodios'));
@@ -42,6 +43,9 @@ function App() {
                 </PageLoader>
               }
             />
+          </Route>
+          <Route path="*" element={<Layout />} >
+            <Route path="*" element={<NotFound />} />
           </Route>
         </Routes>
       </Suspense>

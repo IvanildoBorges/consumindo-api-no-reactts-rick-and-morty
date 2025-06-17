@@ -1,0 +1,21 @@
+.btn-cta {
+    padding: .75rem 1rem;
+    font-weight: 900;
+    background-color: var(--cta-color);
+    color: var(--bg-color);
+    border-radius: .5rem;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    margin-top: 1.5rem;
+    width: 100%;
+    user-select: none;
+    transition: all .3s ease;
+}
+
+.btn-cta:hover {
+    color: var(--cta-color);
+    background-color: var(--bg-color);
+    box-shadow: 0 0 8px var(--shadow-active-color);
+    transition-delay: 0.4s;
+}
