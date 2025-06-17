@@ -2,6 +2,12 @@
 
 Este é um projeto desenvolvido em **React-TS** para consumir a API pública de **Rick and Morty**, exibindo informações sobre personagens e episódios do famoso desenho animado.
 
+🔗 **Veja o projeto online**: [Site Cards Game](https://consumindo-api-no-reactts-rick-and-morty.onrender.com/)
+
+<p align="center">
+  <img src="/public/cover.png" alt="Capa do Projeto" width="100%" />
+</p>
+
 ## 📋 Funcionalidades
 
 - Exibe uma lista de personagens com suas informações.
