@@ -1,0 +1,162 @@
+.card-item {
+    border: 2px solid var(--box-color);
+    box-shadow: 0px 0px 8px var(--shadow-color);
+    padding: 1.5rem 1rem;
+    border-radius: .5rem;
+    display: flex;
+    flex-direction: column;
+    gap: .5rem; 
+    background-color: var(--card-color);
+    transition: all .3s ease;
+    width: 19rem;
+    height: 32rem;
+
+    .box-imagem {
+        background-color: var(--box-color);
+        border-radius: .5rem;
+        width: 100%;
+        height: 100%;
+        overflow: hidden;
+
+        img {
+            width: 100%;
+            height: 100%;
+            display: block;
+            text-align: center;
+            transition: all .3s ease;
+            object-fit: cover;
+        }
+    }
+
+    .content-info {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        .name, .type {
+            width: 100%;
+            text-align: center;
+        }
+
+        .name {
+            font-weight: 700;
+        }
+
+        .type {
+            font-style: oblique;
+            font-weight: 400;
+            color: var(--text-color);
+        }
+
+        .box-info {
+            display: flex;
+            justify-content: space-between;
+            width: 100%;
+            margin-top: 1rem;
+            text-align: center;
+
+            .info-item {
+                display: flex;
+                flex-direction: column;
+                gap: .25rem;
+                overflow: hidden;
+
+                .item-status-title {
+                    font-weight: 700;
+                }
+
+                .item-status-value {
+                    font-style: oblique;
+                    white-space: nowrap;
+                    overflow: hidden;
+                    text-overflow: ellipsis;
+                    display: inline-block; /* ou inline-block */
+                }
+            }
+            /* Aplica o estilo só ao primeiro .item-status-value */
+            .info-item:first-of-type .item-status-value {
+                /* Efeito máquina de escrever */
+                display: inline-block;
+                width: 0; /* começa sem largura */
+                animation: typing 3s steps(20, end) infinite, blink-caret 0.7s step-end infinite;
+                border-right: 2px solid var(--flag-color); /* barra "I" piscando */
+            }
+        }
+
+        .btn-cta {
+            padding: .75rem 1rem;
+            font-weight: 900;
+            background-color: var(--cta-color);
+            color: var(--bg-color);
+            border-radius: .5rem;
+            border: none;
+            outline: none;
+            cursor: pointer;
+            margin-top: 1.5rem;
+            width: 100%;
+            user-select: none;
+            transition: all .3s ease;
+        }
+    }
+}
+
+.card-item:hover {
+    transform: scale(1.1);
+    
+    .box-imagem {
+        img {
+            transform: scale(1.2);
+            opacity: 0.8;
+            transition-delay: 0.3s;
+        }
+    }
+
+    .content-info {
+        .btn-cta:hover {
+            color: var(--cta-color);
+            background-color: var(--bg-color);
+            box-shadow: 0 0 8px var(--shadow-active-color);
+            transition-delay: 0.4s;
+        }
+    }
+}
+
+/* Animação de digitação */
+@keyframes typing {
+  0% {
+    width: 0;
+  }
+  50% {
+    width: 100%;
+  }
+  100% {
+    width: 0;
+  }
+}
+
+/* Animação do cursor piscando */
+@keyframes blink-caret {
+  from, to {
+    border-color: transparent;
+  }
+  50% {
+    border-color: var(--flag-color);
+  }
+}
+
+@media screen and (max-width: 768px) {
+    .card-item {
+        gap: 1rem; 
+        width: 100%;
+
+        .content-info {
+            .btn-cta {
+                padding: 1rem;
+            }
+        }
+    }
+
+    .card-item:hover {
+        transform: scale(1);
+    }
+}

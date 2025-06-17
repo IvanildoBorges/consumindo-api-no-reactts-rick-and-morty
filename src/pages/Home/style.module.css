@@ -1,0 +1,24 @@
+.main-container {
+    min-height: 80vh;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.titulo2 {
+    font-size: 1.75rem;
+}
+
+.lista-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+}
+
+@media screen and (max-width: 768px) {
+    .lista-wrapper {
+        flex-wrap: nowrap;
+        flex-direction: column;
+        gap: 1.5rem;
+    }
+}
