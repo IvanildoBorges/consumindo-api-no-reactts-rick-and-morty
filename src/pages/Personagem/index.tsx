@@ -1,22 +1,32 @@
 import { useEffect, useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useSearchParams } from "react-router-dom";
 import personagemApi from "../../api/api";
 import Card from "../../components/Card";
 import type { Personagem } from "../../models/Personagem";
 import styles from "../Home/style.module.css";
 
 const PagePersonagem = () => {
+    const [searchParams] = useSearchParams();
     const [personagens, setPersonagens] = useState<Personagem[]>([]);
     const navigate = useNavigate();
 
+    const pegaDados = async (ids?: number[]) => {
+        const dados: Personagem[] = await personagemApi.getPersonagens(ids);
+        setPersonagens(dados);
+    };
+
     useEffect(() => {
-        const pegaDados = async () => {
-            const dados: Personagem[] = await personagemApi.getPersonagens();
-            setPersonagens(dados);
+        const idParam = searchParams.get("id");
+
+        if (!idParam) {
+            pegaDados();
+            return;
         };
 
-        pegaDados();
-    }, []);
+        const ids = idParam.split(",").map(Number); // transforma em array de números
+
+        pegaDados(ids);
+    }, [searchParams]);
 
     const goToEps = (lista: []) => {
         // extrai os IDs das URLs dos episódios

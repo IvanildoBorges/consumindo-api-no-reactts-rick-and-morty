@@ -4,6 +4,7 @@ export class Episodio {
     air_date: string;
     episode: string;
     characters: [];
+    url: string;
 
     constructor(episodio: Episodio) {
         this.id = episodio.id;
@@ -11,5 +12,6 @@ export class Episodio {
         this.air_date = episodio.air_date;
         this.episode = episodio.episode;
         this.characters = episodio.characters;
+        this.url = episodio.url;
     }
 }
